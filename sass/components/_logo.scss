@@ -1,0 +1,13 @@
+// Logo
+.logo {
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.logo > span {
+  color: $accent-color;
+}

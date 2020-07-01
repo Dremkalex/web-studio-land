@@ -1,0 +1,141 @@
+// FOOTER
+.footer {
+  color: $white-color;
+  background-color: $footer-bg-color;
+}
+
+.footer .container {
+  @extend %container;
+}
+
+.info-wrapper {
+  display: flex;
+  align-items: baseline;
+  padding-top: 48px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid $footer-border-color;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: $white-color;
+}
+
+.footer-contacts {
+  margin-right: 69px;
+}
+
+.footer-contacts .list {
+  @extend %list;
+}
+
+.footer-contacts .map-address {
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+
+.footer-contacts .item + .item {
+  margin-top: 9px;
+}
+
+.footer-contacts .link {
+  @extend %link;
+  color: $footer-text-color;
+}
+
+.footer-social {
+  margin-right: 104px;
+}
+
+.call-text {
+  display: inline-block;
+  margin-bottom: 21px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.footer-social .list {
+  @extend %list;
+  display: flex;
+}
+
+.footer-social .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-social .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: $white-color;
+  background-color: $footer-border-color;
+
+  transition: background-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.footer-social .icon {
+  --color2: currentColor;
+}
+
+.copyright {
+  margin: 0;
+  padding-top: 18px;
+  padding-bottom: 21px;
+  color: $footer-copyright-color;
+
+  font-size: 12px;
+  line-height: 2;
+  text-align: center;
+}
+
+.copyright .link {
+  @extend %link;
+  color: currentColor;
+  font-family: $secondary-font;
+  font-weight: 700;
+}
+
+// Subscription form
+.subscription-form {
+  display: flex;
+}
+
+.subscription-form .input {
+  width: 358px;
+  margin-right: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border: 1px solid $footer-input-color;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+
+  color: $footer-text-color;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}
+
+.subscription-form .button {
+  @extend %button;
+  display: flex;
+  align-items: center;
+}
+
+.subscription-form .icon {
+  margin-left: 10px;
+}

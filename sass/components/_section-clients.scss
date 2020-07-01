@@ -1,0 +1,50 @@
+// CLIENTS
+.clients-section {
+  @extend %section;
+}
+
+.clients-section .container {
+  @extend %container;
+}
+
+.clients-section .title {
+  @extend %heading;
+  @extend %section-title;
+}
+
+.clients-list {
+  @extend %list;
+  display: flex;
+}
+
+.clients-list .item {
+  width: 170px;
+  height: 90px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.clients-list .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  border: 1px solid $grey-color;
+  border-radius: 4px;
+
+  color: $grey-color;
+  transition: border-color 250ms $timing-function, color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+    color: $accent-color;
+  }
+}
+
+.clients-list .icon {
+  --color2: currentColor;
+}

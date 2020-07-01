@@ -1,0 +1,44 @@
+/* WORKS */
+.works-section {
+  @extend %section;
+}
+
+.works-section .container {
+  @extend %container;
+}
+
+.works-section .title {
+  @extend %heading;
+  @extend %section-title;
+}
+
+.works-list {
+  @extend %list;
+  display: flex;
+}
+
+.works-list .item {
+  position: relative;
+  width: calc((100% - 60px) / 3);
+
+  &:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+}
+
+.works-list .heading {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  margin: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: $dark-bg-color;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $white-color;
+  text-transform: uppercase;
+}

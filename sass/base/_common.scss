@@ -1,0 +1,19 @@
+body {
+  background-color: $white-color;
+  color: $main-text-color;
+
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}

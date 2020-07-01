@@ -1,0 +1,223 @@
+// MODAL
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: visibility 250ms $timing-function, opacity 250ms $timing-function;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 528px;
+
+  transform: scale(1);
+  transition: transform 250ms $timing-function;
+
+  background-color: $white-color;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  .is-hidden & {
+    transform: scale(1.2);
+  }
+}
+
+.modal .button-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background-color: $white-color;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.icon-close {
+  transition: fill 250ms $timing-function;
+
+  .button-close:hover &,
+  .button-close:focus & {
+    fill: $accent-color;
+  }
+}
+
+// Order-form
+.order-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.form-title {
+  margin-bottom: 30px;
+
+  color: $heading-text-color;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+// form-fields
+.form-field {
+  position: relative;
+  margin-bottom: 28px;
+
+  &.textarea {
+    margin-bottom: 20px;
+  }
+
+  &.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+}
+
+.checkbox .link {
+  color: $accent-color;
+}
+
+// form-inputs
+.form-input,
+.form-textarea {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color 250ms $timing-function;
+
+  line-height: 1.14;
+
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+
+.form-input {
+  padding-left: 42px;
+  padding-right: 18px;
+}
+
+.form-textarea {
+  display: block;
+  resize: none;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+// form-checkbox
+.form-checkbox {
+  @extend %visually-hidden;
+}
+
+// form-icons
+.form-field > .icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.form-input:focus ~ .icon,
+.form-input:not(:placeholder-shown) ~ .icon {
+  fill: $accent-color;
+}
+
+.icon-checkbox {
+  display: block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $heading-text-color;
+  border-radius: 2px;
+
+  background-image: url(../images/icon-check.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(1);
+
+  transition: background-color 250ms $timing-function,
+    transform 250ms $timing-function;
+
+  .form-checkbox:checked + & {
+    border: none;
+    transform: scale(1.1);
+
+    background-color: $accent-color;
+  }
+}
+
+// form-labels
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 43px;
+  transform: translateY(-50%);
+
+  transition: transform 250ms $timing-function, color 250ms $timing-function;
+
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  .textarea & {
+    top: 12px;
+    left: 17px;
+    transform: translateY(0);
+  }
+
+  .form-input:focus + &,
+  .form-input:not(:placeholder-shown) + & {
+    transform: translate(-27px, -37px);
+    color: $accent-color;
+    font-size: 12px;
+  }
+
+  .form-textarea:focus + &,
+  .form-textarea:not(:placeholder-shown) + & {
+    transform: translateY(-30px);
+    color: $accent-color;
+    font-size: 12px;
+  }
+}
+
+// form-button
+.order-form .button {
+  @extend %button;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+}
