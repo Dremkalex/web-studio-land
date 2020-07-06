@@ -13,14 +13,28 @@
 
 .features-list {
   @extend %list;
-  display: flex;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .features-list .item {
-  width: calc((100% - 90px) / 4);
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+  }
 
-  &:not(:nth-child(4n)) {
-    margin-right: 30px;
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 4 * 30px) / 4);
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
   }
 
   &::before {
@@ -36,21 +50,8 @@
   }
 }
 
-.features-list .icon-antenna::before {
-  background-image: url(../images/page-main/features/antenna.svg);
-}
-
-.features-list .icon-clock::before {
-  background-image: url(../images/page-main/features/clock.svg);
-}
-
-.features-list .icon-diagram::before {
-  background-image: url(../images/page-main/features/diagram.svg);
-}
-
-.features-list .icon-astronaut::before {
-  background-image: url(../images/page-main/features/astronaut.svg);
-}
+$icons: 'antenna', 'clock', 'diagram', 'astronaut';
+@include generateIcons($icons, 'page-main/features', 'svg');
 
 .features-list .heading {
   @extend %heading;

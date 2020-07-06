@@ -11,3 +11,14 @@
 .logo > span {
   color: $accent-color;
 }
+
+.header .logo {
+  // margin-right: 85px;
+  color: $heading-text-color;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: $white-color;
+}

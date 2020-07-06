@@ -1,0 +1,7 @@
+@mixin generateIcons($iconList, $path, $extension) {
+  @each $icon in $iconList {
+    .icon-#{$icon}:before {
+      background-image: url('../images/#{$path}/#{$icon}.#{$extension}');
+    }
+  }
+}
