@@ -24,6 +24,13 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
+  transition: fill 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    fill: $accent-color;
+  }
 }
 
 .menu-button .icon-cross {

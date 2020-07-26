@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Веб-студия" />
     <title>Web Studio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
@@ -19,7 +20,9 @@
     <!-- HEADER -->
     <header class="header">
       <div class="container">
-        <a href="./index.html" class="logo"><span>Web</span>&nbsp;Studio</a>
+        <a href="./index.html" class="logo"
+          ><span>Web</span>&nbsp;Studio</a
+        >
 
         <button
           class="menu-button is-open"
@@ -29,6 +32,7 @@
           aria-controls="menu-container"
         >
           <svg
+            class="icon"
             width="40"
             height="40"
             aria-label="Переключатель мобильного меню"
@@ -85,12 +89,14 @@
       <section class="hero">
         <div class="overlay">
           <h1 class="title">эффективные решения<br />для вашего бизнеса</h1>
-          <button class="button" data-modal-open>Заказать услугу</button>
+          <button class="button" aria-controls="modal" data-modal-open>
+            Заказать услугу
+          </button>
         </div>
       </section>
       <!-- MODAL -->
       <div class="backdrop is-hidden" data-modal>
-        <div class="modal">
+        <div class="modal" id="modal">
           <form class="order-form" method="POST">
             <b class="form-title">Оставьте свои данные, мы вам перезвоним</b>
 
@@ -204,25 +210,43 @@
           <ul class="works-list">
             <li class="item">
               <img
+                srcset="
+                  ./images/page-main/works/laptop.jpg    1x,
+                  ./images/page-main/works/laptop@2x.jpg 2x,
+                  ./images/page-main/works/laptop@3x.jpg 3x
+                "
                 src="./images/page-main/works/laptop.jpg"
                 alt="Ноутбук"
                 width="370"
+                height="294"
               />
               <h3 class="heading">Десктопные приложения</h3>
             </li>
             <li class="item">
               <img
+                srcset="
+                  ./images/page-main/works/smartphone.jpg    1x,
+                  ./images/page-main/works/smartphone@2x.jpg 2x,
+                  ./images/page-main/works/smartphone@3x.jpg 3x
+                "
                 src="./images/page-main/works/smartphone.jpg"
                 alt="Смартфон"
                 width="370"
+                height="294"
               />
               <h3 class="heading">Мобильные приложения</h3>
             </li>
             <li class="item">
               <img
+                srcset="
+                  ./images/page-main/works/desktop.jpg    1x,
+                  ./images/page-main/works/desktop@2x.jpg 2x,
+                  ./images/page-main/works/desktop@3x.jpg 3x
+                "
                 src="./images/page-main/works/desktop.jpg"
                 alt="Персональный компьютер"
                 width="370"
+                height="294"
               />
               <h3 class="heading">Дизайнерские решения</h3>
             </li>
@@ -235,13 +259,85 @@
           <h2 class="title">Наша команда</h2>
           <ul class="team-list">
             <li class="item">
-              <img
-                class="image"
-                src="./images/page-main/team/john-smith.jpg"
-                alt="John Smith"
-                width="278"
-              />
-              <h3 class="heading">John Smith</h3>
+              <picture>
+                <!-- mobile image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-mobile.webp     450w,
+                    ./images/page-main/team/member-01/member-01-mobile@2x.webp  900w,
+                    ./images/page-main/team/member-01/member-01-mobile@3x.webp 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-mobile.jpg     450w,
+                    ./images/page-main/team/member-01/member-01-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-01/member-01-mobile@3x.jpg 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/jpeg"
+                />
+                <!-- desktop image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-desktop.webp     270w,
+                    ./images/page-main/team/member-01/member-01-desktop@2x.webp  540w,
+                    ./images/page-main/team/member-01/member-01-desktop@3x.webp 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-desktop.jpg     270w,
+                    ./images/page-main/team/member-01/member-01-desktop@2x.jpg  540w,
+                    ./images/page-main/team/member-01/member-01-desktop@3x.jpg 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/jpeg"
+                />
+                <!-- tablet image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-tablet.webp     354w,
+                    ./images/page-main/team/member-01/member-01-tablet@2x.webp  708w,
+                    ./images/page-main/team/member-01/member-01-tablet@3x.webp 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-tablet.jpg     354w,
+                    ./images/page-main/team/member-01/member-01-tablet@2x.jpg  708w,
+                    ./images/page-main/team/member-01/member-01-tablet@3x.jpg 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/jpeg"
+                />
+                <!-- fallback image-->
+                <img
+                  class="image"
+                  alt="Николай Кучеренко"
+                  srcset="
+                    ./images/page-main/team/member-01/member-01-mobile.jpg     450w,
+                    ./images/page-main/team/member-01/member-01-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-01/member-01-mobile@3x.jpg 1350w
+                  "
+                  src="./images/page-main/team/member-01/member-01-mobile.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 100vw"
+                />
+              </picture>
+
+              <h3 class="heading">Николай Кучеренко</h3>
               <p class="team-position">Product Designer</p>
               <ul class="social-links">
                 <li class="item">
@@ -275,13 +371,80 @@
               </ul>
             </li>
             <li class="item">
-              <img
-                class="image"
-                src="./images/page-main/team/marta-stewart.jpg"
-                alt="Marta Stewart"
-                width="278"
-              />
-              <h3 class="heading">Marta Stewart</h3>
+              <picture>
+                <!-- mobile image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-mobile.webp     450w,
+                    ./images/page-main/team/member-02/member-02-mobile@2x.webp  900w,
+                    ./images/page-main/team/member-02/member-02-mobile@3x.webp 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-mobile.jpg     450w,
+                    ./images/page-main/team/member-02/member-02-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-02/member-02-mobile@3x.jpg 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/jpeg"
+                />
+                <!-- desktop image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-desktop.webp     270w,
+                    ./images/page-main/team/member-02/member-02-desktop@2x.webp  540w,
+                    ./images/page-main/team/member-02/member-02-desktop@3x.webp 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-desktop.jpg     270w,
+                    ./images/page-main/team/member-02/member-02-desktop@2x.jpg  540w,
+                    ./images/page-main/team/member-02/member-02-desktop@3x.jpg 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/jpeg"
+                />
+                <!-- tablet image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-tablet.webp     354w,
+                    ./images/page-main/team/member-02/member-02-tablet@2x.webp  708w,
+                    ./images/page-main/team/member-02/member-02-tablet@3x.webp 1062w
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-tablet.jpg     354w,
+                    ./images/page-main/team/member-02/member-02-tablet@2x.jpg  708w,
+                    ./images/page-main/team/member-02/member-02-tablet@3x.jpg 1062w
+                  "
+                  type="image/jpeg"
+                />
+                <!-- fallback image-->
+                <img
+                  class="image"
+                  alt="Ольга Иванова"
+                  srcset="
+                    ./images/page-main/team/member-02/member-02-mobile.jpg     450w,
+                    ./images/page-main/team/member-02/member-02-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-02/member-02-mobile@3x.jpg 1350w
+                  "
+                  src="./images/page-main/team/member-02/member-02-mobile.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 100vw"
+                />
+              </picture>
+              <h3 class="heading">Ольга Иванова</h3>
               <p class="team-position">Frontend Developer</p>
               <ul class="social-links">
                 <li class="item">
@@ -315,13 +478,83 @@
               </ul>
             </li>
             <li class="item">
-              <img
-                class="image"
-                src="./images/page-main/team/robert-jakis.jpg"
-                alt="Robert Jakis"
-                width="278"
-              />
-              <h3 class="heading">Robert Jakis</h3>
+              <!-- mobile image formats -->
+              <picture>
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-mobile.webp     450w,
+                    ./images/page-main/team/member-03/member-03-mobile@2x.webp  900w,
+                    ./images/page-main/team/member-03/member-03-mobile@3x.webp 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-mobile.jpg     450w,
+                    ./images/page-main/team/member-03/member-03-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-03/member-03-mobile@3x.jpg 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/jpeg"
+                />
+                <!-- desktop image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-desktop.webp     270w,
+                    ./images/page-main/team/member-03/member-03-desktop@2x.webp  540w,
+                    ./images/page-main/team/member-03/member-03-desktop@3x.webp 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-desktop.jpg     270w,
+                    ./images/page-main/team/member-03/member-03-desktop@2x.jpg  540w,
+                    ./images/page-main/team/member-03/member-03-desktop@3x.jpg 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/jpeg"
+                />
+                <!-- tablet image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-tablet.webp     354w,
+                    ./images/page-main/team/member-03/member-03-tablet@2x.webp  708w,
+                    ./images/page-main/team/member-03/member-03-tablet@3x.webp 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-tablet.jpg     354w,
+                    ./images/page-main/team/member-03/member-03-tablet@2x.jpg  708w,
+                    ./images/page-main/team/member-03/member-03-tablet@3x.jpg 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/jpeg"
+                />
+                <!-- fallback image-->
+                <img
+                  class="image"
+                  alt="Андрей Шевченко"
+                  srcset="
+                    ./images/page-main/team/member-03/member-03-mobile.jpg     450w,
+                    ./images/page-main/team/member-03/member-03-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-03/member-03-mobile@3x.jpg 1350w
+                  "
+                  src="./images/page-main/team/member-03/member-03-mobile.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 100vw"
+                />
+              <h3 class="heading">Андрей Шевченко</h3>
               <p class="team-position">Marketing</p>
               <ul class="social-links">
                 <li class="item">
@@ -355,13 +588,83 @@
               </ul>
             </li>
             <li class="item">
-              <img
-                class="image"
-                src="./images/page-main/team/martin-doe.jpg"
-                alt="Martin Doe"
-                width="278"
-              />
-              <h3 class="heading">Martin Doe</h3>
+              <picture>
+                <!-- mobile image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-mobile.webp     450w,
+                    ./images/page-main/team/member-04/member-04-mobile@2x.webp  900w,
+                    ./images/page-main/team/member-04/member-04-mobile@3x.webp 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-mobile.jpg     450w,
+                    ./images/page-main/team/member-04/member-04-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-04/member-04-mobile@3x.jpg 1350w
+                  "
+                  media="(max-width: 767px)"
+                  sizes="100vw"
+                  type="image/jpeg"
+                />
+                <!-- desktop image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-desktop.webp     270w,
+                    ./images/page-main/team/member-04/member-04-desktop@2x.webp  540w,
+                    ./images/page-main/team/member-04/member-04-desktop@3x.webp 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-desktop.jpg     270w,
+                    ./images/page-main/team/member-04/member-04-desktop@2x.jpg  540w,
+                    ./images/page-main/team/member-04/member-04-desktop@3x.jpg 810w
+                  "
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                  type="image/jpeg"
+                />
+                <!-- tablet image formats -->
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-tablet.webp     354w,
+                    ./images/page-main/team/member-04/member-04-tablet@2x.webp  708w,
+                    ./images/page-main/team/member-04/member-04-tablet@3x.webp 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-tablet.jpg     354w,
+                    ./images/page-main/team/member-04/member-04-tablet@2x.jpg  708w,
+                    ./images/page-main/team/member-04/member-04-tablet@3x.jpg 1062w
+                  "
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                  type="image/jpeg"
+                />
+                <!-- fallback image-->
+                <img
+                  class="image"
+                  alt="Иван Николаев"
+                  srcset="
+                    ./images/page-main/team/member-04/member-04-mobile.jpg     450w,
+                    ./images/page-main/team/member-04/member-04-mobile@2x.jpg  900w,
+                    ./images/page-main/team/member-04/member-04-mobile@3x.jpg 1350w
+                  "
+                  src="./images/page-main/team/member-04/member-04-mobile.jpg"
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, 100vw"
+                />
+              <h3 class="heading">Иван Николаев</h3>
               <p class="team-position">UI Designer</p>
               <ul class="social-links">
                 <li class="item">
@@ -461,63 +764,75 @@
       <div class="container">
         <div class="info-wrapper">
           <div class="footer-contacts">
-            <a class="logo" href="./index.html"><span>Web</span>&nbsp;Studio</a>
-            <address>
-              <p class="map-address">г. Киев, пр-т Леси Украинки, 26</p>
+            <div class="footer-address">
+              <a class="logo" href="./index.html"
+                ><span>Web</span>&nbsp;Studio</a
+              >
+              <address>
+                <p class="post-address">г. Киев, пр-т Леси Украинки, 26</p>
+                <ul class="list">
+                  <li class="item">
+                    <a class="link" href="mailto:info@devstudio.com"
+                      >info@devstudio.com</a
+                    >
+                  </li>
+                  <li class="item">
+                    <a class="link" href="tel:+380961111111"
+                      >+38 096 111 11 11</a
+                    >
+                  </li>
+                </ul>
+              </address>
+            </div>
+            <div class="footer-social">
+              <b class="call-text">присоединяйтесь</b>
               <ul class="list">
                 <li class="item">
-                  <a class="link" href="mailto:info@devstudio.com"
-                    >info@devstudio.com</a
-                  >
+                  <a class="link" href="" aria-label="Ссылка на Instagram">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="item">
-                  <a class="link" href="tel:+380961111111">+38 096 111 11 11</a>
+                  <a class="link" href="" aria-label="Ссылка на Twitter">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="link" href="" aria-label="Ссылка на Facebook">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="link" href="" aria-label="Ссылка на LinkedIn">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
-            </address>
-          </div>
-          <div class="footer-social">
-            <b class="call-text">присоединяйтесь</b>
-            <ul class="list">
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Instagram">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Twitter">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Facebook">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на LinkedIn">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            </div>
           </div>
           <div class="subscription">
             <b class="call-text">подпишитесь на рассылку</b>
             <form class="subscription-form" method="POST">
-              <input
-                class="input"
-                type="email"
-                placeholder="E-mail"
-                name="email"
-              />
+              <div class="subscription-form-field">
+                <input
+                  class="subscription-form-input"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder=" "
+                />
+                <label for="email" class="subscription-form-label"
+                  >E-mail</label
+                >
+              </div>
               <button class="button" type="submit">
                 <span>Подписаться</span>
                 <svg class="icon" width="24" height="24">
@@ -529,7 +844,8 @@
         </div>
 
         <p class="copyright">
-          2020 | Developed by <a class="link" href="">&#64;Dremkalex</a>
+          2020 | Developed by
+          <a class="link" href="https://github.com/Dremkalex">&#64;Dremkalex</a>
         </p>
       </div>
     </footer>

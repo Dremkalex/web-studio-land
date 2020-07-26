@@ -19,38 +19,64 @@
     <!-- HEADER -->
     <header class="header">
       <div class="container">
-        <nav class="site-nav">
-          <a href="./index.html" class="logo"><span>Web</span>&nbsp;Studio</a>
-          <ul class="list">
-            <li class="item">
-              <a class="link" href="./">Студия</a>
-            </li>
-            <li class="item">
-              <a class="link current" href="./portfolio.html">Портфолио</a>
-            </li>
-            <li class="item"><a class="link" href="">Контакты</a></li>
-          </ul>
-        </nav>
-        <address class="header-contacts">
-          <ul class="list">
-            <li class="item">
-              <a class="link" href="mailto:info@devstudio.com">
-                <svg class="icon" width="16" height="12">
-                  <use href="./images/sprite.svg#icon-envelope"></use>
-                </svg>
-                info@devstudio.com
-              </a>
-            </li>
-            <li class="item">
-              <a class="link" href="tel:+380961111111">
-                <svg class="icon" width="10" height="15">
-                  <use href="./images/sprite.svg#icon-smartphone"></use>
-                </svg>
-                +38 096 111 11 11
-              </a>
-            </li>
-          </ul>
-        </address>
+        <a href="./index.html" class="logo"><span>Web</span>&nbsp;Studio</a>
+
+        <button
+          class="menu-button is-open"
+          type="button"
+          data-menu-button
+          aria-expanded="false"
+          aria-controls="menu-container"
+        >
+          <svg
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use
+              class="icon-cross"
+              href="./images/sprite.svg#icon-menu-burger"
+            ></use>
+            <use
+              class="icon-menu"
+              href="./images/sprite.svg#icon-menu-close"
+            ></use>
+          </svg>
+        </button>
+
+        <div id="menu-container" class="menu-container" data-menu>
+          <nav class="site-nav">
+            <ul class="list">
+              <li class="item">
+                <a class="link" href="./">Студия</a>
+              </li>
+              <li class="item">
+                <a class="link current" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="item"><a class="link" href="">Контакты</a></li>
+            </ul>
+          </nav>
+          <address class="header-contacts">
+            <ul class="list">
+              <li class="item">
+                <a class="link" href="mailto:info@devstudio.com">
+                  <svg class="icon" width="16" height="12">
+                    <use href="./images/sprite.svg#icon-envelope"></use>
+                  </svg>
+                  info@devstudio.com
+                </a>
+              </li>
+              <li class="item">
+                <a class="link" href="tel:+380961111111">
+                  <svg class="icon" width="10" height="15">
+                    <use href="./images/sprite.svg#icon-smartphone"></use>
+                  </svg>
+                  +38 096 111 11 11
+                </a>
+              </li>
+            </ul>
+          </address>
+        </div>
       </div>
     </header>
     <!-- MAIN CONTENT -->
@@ -69,11 +95,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/technocrack.jpg"
-                    width="370"
-                    alt="Технокряк"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-mobile.webp     450w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@2x.webp  900w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-mobile.jpg     450w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-desktop.webp     370w,
+                        ./images/page-portfolio/technocrack/technocrack-desktop@2x.webp  740w,
+                        ./images/page-portfolio/technocrack/technocrack-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-desktop.jpg     370w,
+                        ./images/page-portfolio/technocrack/technocrack-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/technocrack/technocrack-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-tablet.webp     354w,
+                        ./images/page-portfolio/technocrack/technocrack-tablet@2x.webp  708w,
+                        ./images/page-portfolio/technocrack/technocrack-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-tablet.jpg     354w,
+                        ./images/page-portfolio/technocrack/technocrack-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/technocrack/technocrack-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Технокряк"
+                      srcset="
+                        ./images/page-portfolio/technocrack/technocrack-mobile.jpg     450w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/technocrack/technocrack-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/technocrack/technocrack-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -89,11 +187,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/poster.jpg"
-                    width="370"
-                    alt="Постер Нью Орлеан"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-mobile.webp     450w,
+                        ./images/page-portfolio/poster/poster-mobile@2x.webp  900w,
+                        ./images/page-portfolio/poster/poster-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-mobile.jpg     450w,
+                        ./images/page-portfolio/poster/poster-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/poster/poster-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-desktop.webp     370w,
+                        ./images/page-portfolio/poster/poster-desktop@2x.webp  740w,
+                        ./images/page-portfolio/poster/poster-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-desktop.jpg     370w,
+                        ./images/page-portfolio/poster/poster-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/poster/poster-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-tablet.webp     354w,
+                        ./images/page-portfolio/poster/poster-tablet@2x.webp  708w,
+                        ./images/page-portfolio/poster/poster-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/poster/poster-tablet.jpg     354w,
+                        ./images/page-portfolio/poster/poster-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/poster/poster-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Постер Нью Орлеан"
+                      srcset="
+                        ./images/page-portfolio/poster/poster-mobile.jpg     450w,
+                        ./images/page-portfolio/poster/poster-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/poster/poster-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/poster/poster-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -109,11 +279,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/restaurant.jpg"
-                    width="370"
-                    alt="Ресторан Сифуд"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-mobile.webp     450w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@2x.webp  900w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-mobile.jpg     450w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-desktop.webp     370w,
+                        ./images/page-portfolio/restaurant/restaurant-desktop@2x.webp  740w,
+                        ./images/page-portfolio/restaurant/restaurant-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-desktop.jpg     370w,
+                        ./images/page-portfolio/restaurant/restaurant-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/restaurant/restaurant-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-tablet.webp     354w,
+                        ./images/page-portfolio/restaurant/restaurant-tablet@2x.webp  708w,
+                        ./images/page-portfolio/restaurant/restaurant-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-tablet.jpg     354w,
+                        ./images/page-portfolio/restaurant/restaurant-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/restaurant/restaurant-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Ресторан Сифуд"
+                      srcset="
+                        ./images/page-portfolio/restaurant/restaurant-mobile.jpg     450w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/restaurant/restaurant-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/restaurant/restaurant-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -129,11 +371,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/headphones.jpg"
-                    width="370"
-                    alt="Наушники"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-mobile.webp     450w,
+                        ./images/page-portfolio/headphones/headphones-mobile@2x.webp  900w,
+                        ./images/page-portfolio/headphones/headphones-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-mobile.jpg     450w,
+                        ./images/page-portfolio/headphones/headphones-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/headphones/headphones-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-desktop.webp     370w,
+                        ./images/page-portfolio/headphones/headphones-desktop@2x.webp  740w,
+                        ./images/page-portfolio/headphones/headphones-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-desktop.jpg     370w,
+                        ./images/page-portfolio/headphones/headphones-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/headphones/headphones-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-tablet.webp     354w,
+                        ./images/page-portfolio/headphones/headphones-tablet@2x.webp  708w,
+                        ./images/page-portfolio/headphones/headphones-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-tablet.jpg     354w,
+                        ./images/page-portfolio/headphones/headphones-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/headphones/headphones-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Наушники"
+                      srcset="
+                        ./images/page-portfolio/headphones/headphones-mobile.jpg     450w,
+                        ./images/page-portfolio/headphones/headphones-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/headphones/headphones-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/headphones/headphones-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -149,11 +463,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/boxes.jpg"
-                    width="370"
-                    alt="Коробки"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-mobile.webp     450w,
+                        ./images/page-portfolio/boxes/boxes-mobile@2x.webp  900w,
+                        ./images/page-portfolio/boxes/boxes-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-mobile.jpg     450w,
+                        ./images/page-portfolio/boxes/boxes-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/boxes/boxes-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-desktop.webp     370w,
+                        ./images/page-portfolio/boxes/boxes-desktop@2x.webp  740w,
+                        ./images/page-portfolio/boxes/boxes-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-desktop.jpg     370w,
+                        ./images/page-portfolio/boxes/boxes-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/boxes/boxes-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-tablet.webp     354w,
+                        ./images/page-portfolio/boxes/boxes-tablet@2x.webp  708w,
+                        ./images/page-portfolio/boxes/boxes-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-tablet.jpg     354w,
+                        ./images/page-portfolio/boxes/boxes-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/boxes/boxes-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Коробки"
+                      srcset="
+                        ./images/page-portfolio/boxes/boxes-mobile.jpg     450w,
+                        ./images/page-portfolio/boxes/boxes-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/boxes/boxes-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/boxes/boxes-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -169,11 +555,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/mac.jpg"
-                    width="370"
-                    alt="Ай Мак"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-mobile.webp     450w,
+                        ./images/page-portfolio/mac/mac-mobile@2x.webp  900w,
+                        ./images/page-portfolio/mac/mac-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-mobile.jpg     450w,
+                        ./images/page-portfolio/mac/mac-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/mac/mac-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-desktop.webp     370w,
+                        ./images/page-portfolio/mac/mac-desktop@2x.webp  740w,
+                        ./images/page-portfolio/mac/mac-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-desktop.jpg     370w,
+                        ./images/page-portfolio/mac/mac-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/mac/mac-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-tablet.webp     354w,
+                        ./images/page-portfolio/mac/mac-tablet@2x.webp  708w,
+                        ./images/page-portfolio/mac/mac-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/mac/mac-tablet.jpg     354w,
+                        ./images/page-portfolio/mac/mac-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/mac/mac-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Ай Мак"
+                      srcset="
+                        ./images/page-portfolio/mac/mac-mobile.jpg     450w,
+                        ./images/page-portfolio/mac/mac-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/mac/mac-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/mac/mac-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -189,11 +647,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/books.jpg"
-                    width="370"
-                    alt="Журнал"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-mobile.webp     450w,
+                        ./images/page-portfolio/books/books-mobile@2x.webp  900w,
+                        ./images/page-portfolio/books/books-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-mobile.jpg     450w,
+                        ./images/page-portfolio/books/books-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/books/books-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-desktop.webp     370w,
+                        ./images/page-portfolio/books/books-desktop@2x.webp  740w,
+                        ./images/page-portfolio/books/books-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-desktop.jpg     370w,
+                        ./images/page-portfolio/books/books-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/books/books-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-tablet.webp     354w,
+                        ./images/page-portfolio/books/books-tablet@2x.webp  708w,
+                        ./images/page-portfolio/books/books-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/books/books-tablet.jpg     354w,
+                        ./images/page-portfolio/books/books-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/books/books-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Журнал"
+                      srcset="
+                        ./images/page-portfolio/books/books-mobile.jpg     450w,
+                        ./images/page-portfolio/books/books-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/books/books-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/books/books-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -209,11 +739,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio/lab.jpg"
-                    width="370"
-                    alt="Проект Лаб"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-mobile.webp     450w,
+                        ./images/page-portfolio/lab/lab-mobile@2x.webp  900w,
+                        ./images/page-portfolio/lab/lab-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-mobile.jpg     450w,
+                        ./images/page-portfolio/lab/lab-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/lab/lab-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-desktop.webp     370w,
+                        ./images/page-portfolio/lab/lab-desktop@2x.webp  740w,
+                        ./images/page-portfolio/lab/lab-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-desktop.jpg     370w,
+                        ./images/page-portfolio/lab/lab-desktop@2x.jpg  740w,
+                        ./images/page-portfolio/lab/lab-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-tablet.webp     354w,
+                        ./images/page-portfolio/lab/lab-tablet@2x.webp  708w,
+                        ./images/page-portfolio/lab/lab-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio/lab/lab-tablet.jpg     354w,
+                        ./images/page-portfolio/lab/lab-tablet@2x.jpg  708w,
+                        ./images/page-portfolio/lab/lab-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Проект Лаб"
+                      srcset="
+                        ./images/page-portfolio/lab/lab-mobile.jpg     450w,
+                        ./images/page-portfolio/lab/lab-mobile@2x.jpg  900w,
+                        ./images/page-portfolio/lab/lab-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio/lab/lab-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -229,11 +831,83 @@
             <li class="item">
               <a href="" class="link">
                 <div class="thumb">
-                  <img
-                    src="./images/page-portfolio//bussiness.jpg"
-                    width="370"
-                    alt="Макбук"
-                  />
+                  <picture>
+                    <!-- mobile image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-mobile.webp     450w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@2x.webp  900w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@3x.webp 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-mobile.jpg     450w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@2x.jpg  900w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@3x.jpg 1350w
+                      "
+                      media="(max-width: 767px)"
+                      sizes="100vw"
+                      type="image/jpeg"
+                    />
+                    <!-- desktop image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-desktop.webp     370w,
+                        ./images/page-portfolio//bussiness/bussiness-desktop@2x.webp  740w,
+                        ./images/page-portfolio//bussiness/bussiness-desktop@3x.webp 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-desktop.jpg     370w,
+                        ./images/page-portfolio//bussiness/bussiness-desktop@2x.jpg  740w,
+                        ./images/page-portfolio//bussiness/bussiness-desktop@3x.jpg 1110w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                      type="image/jpeg"
+                    />
+                    <!-- tablet image formats -->
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-tablet.webp     354w,
+                        ./images/page-portfolio//bussiness/bussiness-tablet@2x.webp  708w,
+                        ./images/page-portfolio//bussiness/bussiness-tablet@3x.webp 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-tablet.jpg     354w,
+                        ./images/page-portfolio//bussiness/bussiness-tablet@2x.jpg  708w,
+                        ./images/page-portfolio//bussiness/bussiness-tablet@3x.jpg 1062w
+                      "
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                      type="image/jpeg"
+                    />
+                    <!-- fallback image-->
+                    <img
+                      alt="Макбук"
+                      srcset="
+                        ./images/page-portfolio//bussiness/bussiness-mobile.jpg     450w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@2x.jpg  900w,
+                        ./images/page-portfolio//bussiness/bussiness-mobile@3x.jpg 1350w
+                      "
+                      src="./images/page-portfolio//bussiness/bussiness-mobile.jpg"
+                      sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, 100vw"
+                    />
+                  </picture>
+
                   <p class="hover-text">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
@@ -255,63 +929,75 @@
       <div class="container">
         <div class="info-wrapper">
           <div class="footer-contacts">
-            <a class="logo" href="./index.html"><span>Web</span>&nbsp;Studio</a>
-            <address>
-              <p class="map-address">г. Киев, пр-т Леси Украинки, 26</p>
+            <div class="footer-address">
+              <a class="logo" href="./index.html"
+                ><span>Web</span>&nbsp;Studio</a
+              >
+              <address>
+                <p class="post-address">г. Киев, пр-т Леси Украинки, 26</p>
+                <ul class="list">
+                  <li class="item">
+                    <a class="link" href="mailto:info@devstudio.com"
+                      >info@devstudio.com</a
+                    >
+                  </li>
+                  <li class="item">
+                    <a class="link" href="tel:+380961111111"
+                      >+38 096 111 11 11</a
+                    >
+                  </li>
+                </ul>
+              </address>
+            </div>
+            <div class="footer-social">
+              <b class="call-text">присоединяйтесь</b>
               <ul class="list">
                 <li class="item">
-                  <a class="link" href="mailto:info@devstudio.com"
-                    >info@devstudio.com</a
-                  >
+                  <a class="link" href="" aria-label="Ссылка на Instagram">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="item">
-                  <a class="link" href="tel:+380961111111">+38 096 111 11 11</a>
+                  <a class="link" href="" aria-label="Ссылка на Twitter">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="link" href="" aria-label="Ссылка на Facebook">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="item">
+                  <a class="link" href="" aria-label="Ссылка на LinkedIn">
+                    <svg class="icon" width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
-            </address>
-          </div>
-          <div class="footer-social">
-            <b class="call-text">присоединяйтесь</b>
-            <ul class="list">
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Instagram">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Twitter">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на Facebook">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="item">
-                <a class="link" href="" aria-label="Ссылка на LinkedIn">
-                  <svg class="icon" width="20" height="20">
-                    <use href="./images/sprite.svg#icon-linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            </div>
           </div>
           <div class="subscription">
             <b class="call-text">подпишитесь на рассылку</b>
             <form class="subscription-form" method="POST">
-              <input
-                class="input"
-                type="email"
-                placeholder="E-mail"
-                name="email"
-              />
+              <div class="subscription-form-field">
+                <input
+                  class="subscription-form-input"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder=" "
+                />
+                <label for="email" class="subscription-form-label"
+                  >E-mail</label
+                >
+              </div>
               <button class="button" type="submit">
                 <span>Подписаться</span>
                 <svg class="icon" width="24" height="24">
@@ -323,9 +1009,11 @@
         </div>
 
         <p class="copyright">
-          2020 | Developed by <a class="link" href="">&#64;Dremkalex</a>
+          2020 | Developed by
+          <a class="link" href="https://github.com/Dremkalex">&#64;Dremkalex</a>
         </p>
       </div>
     </footer>
+    <script src="./js/menu.js" type="module"></script>
   </body>
 </html>

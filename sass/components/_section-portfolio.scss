@@ -15,12 +15,29 @@
 .filter-buttons {
   @extend %list;
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
 }
 
-.filter-buttons .item:not(:last-child) {
-  margin-right: 8px;
+.filter-buttons .item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .filter-buttons .button {
@@ -50,24 +67,36 @@
 // PORTFOLIO-LIST
 .portfolio-list {
   @extend %list;
-  display: flex;
-  flex-wrap: wrap;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .portfolio-list .item {
-  width: calc((100% - 30px * 2) / 3);
-
-  &:not(:nth-child(3n)) {
-    margin-right: 30px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
-  &:not(:nth-last-child(-n + 3)) {
-    margin-bottom: 30px;
+
+  @media screen and (min-width: $tablet) {
+    margin: 15px;
+    width: calc((100% - 30px * 2) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 30px * 3) / 3);
   }
 }
 
 .portfolio-list .link {
   @extend %link;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   transition: box-shadow 250ms $timing-function;
 
@@ -124,6 +153,7 @@
 }
 
 .portfolio-list .content {
+  flex-grow: 1;
   padding: 20px 24px;
   border: 1px solid $border-card-color;
   border-top: none;
